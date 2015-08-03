@@ -35,7 +35,11 @@
 <body>
 
     <div class="paper pure-g">
-      <form class="pure-form paper-form pure-u-1">
+          <div class"top-header">
+            <img class="logo" src="img/shopping-cart.png">
+            <h1>Shopping List</h1><h3>by David Gonen</h3>
+          </div>
+      <!-- <form class="pure-form paper-form pure-u-1">
         <fieldset>
           <div class="pure-control-group pure-u-1 add-item">
             <div class="add-box">
@@ -44,7 +48,14 @@
             </div>
           </div>
         </fieldset>
-      </form>
+      </form> -->
+      <div class="lined-box pure-u-1 pure-control-group pure-form">
+        <div class="red-line pure-u-1-12"></div>
+        <div class="todo-item">
+          <input class="pure-input-rounded" type="text" placeholder="Add item...">
+        </div>
+        <button class="button-success pure-button">Add</button>
+      </div>
         <div class="lined-box pure-u-1">
           <div class="red-line pure-u-1-12"><input id="option-one" type="checkbox" value=""></div>
           <div class="todo-item">Chocolate milk</div>
