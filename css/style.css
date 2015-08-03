@@ -67,7 +67,7 @@ div .logo {
     background: rgb(28, 184, 65); /* this is a green */
     display: inline-block;
     margin: auto auto auto 10px;
-    width: 8em;
+    width: 14em;
 }
 .button-error {
   background: rgb(202, 60, 60); /* this is a maroon */

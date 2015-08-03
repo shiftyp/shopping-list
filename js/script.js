@@ -1,25 +1,36 @@
 $(document).ready(function(){
-  $('input').iCheck({
-    checkboxClass: 'icheckbox_square-red',
-    radioClass: 'iradio_square-red',
-    increaseArea: '50%' // optional
+
+  $('body').on('click','', function() {
+    console.log( event.target );
   });
 
   //cross out the text of items with the checkbox selected
-  $('div.red-line ins.iCheck-helper').click(function() {
-      $('.icheckbox_square-red').parent().next().css("text-decoration", "none");
-      $('.icheckbox_square-red.checked').parent().next().css("text-decoration", "line-through");
+  $('body').on('click', 'ins.iCheck-helper', function() {
+      $('.icheckbox_square-red').parent().next().children('span').css("text-decoration", "none");
+      $('.icheckbox_square-red.checked').parent().next().children('span').css("text-decoration", "line-through");
   });
 
 
+  $('body').on('ifToggled', function(event){
+    alert(event.type + ' callback');
+  });
+
     //add items
 
-    $('.lined-box-first > div > button').click(function() {
+    $('body').on('click', '.lined-box-first > div > button', function() {
         console.log("add button clicked!");
         var itemvalue = $('.lined-box-first .todo-item > input').val();
         console.log(itemvalue);
         $( 'body .line-item:last-of-type' ).clone().insertAfter('body .line-item:last-of-type');
         $( 'body .line-item:last-of-type .todo-item > span' ).text( itemvalue );
+        $('body .line-item:last-of-type input').remove();
+        $('body .line-item:last-of-type input').iCheck({
+          checkboxClass: 'icheckbox_square-red',
+          radioClass: 'iradio_square-red',
+          increaseArea: '50%', // optional
+          inheritID: true
+        });
+        $('.line-item').sortable();
     });
 
   //remove lines
@@ -30,9 +41,14 @@ $(document).ready(function(){
 
     });
 
-$('.line-item').click(function() {
-  console.log( event.target );
-});
 
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-red',
+      radioClass: 'iradio_square-red',
+      increaseArea: '50%', // optional
+      inheritID: true
+    });
+
+$('.line-item').sortable();
 
 });
