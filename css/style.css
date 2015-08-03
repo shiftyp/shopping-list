@@ -1,0 +1,27 @@
+.lined-box {
+  border: 1px black solid;
+  border-top: none;
+  height: 55px;
+}
+.lined-box:first-of-type {
+  border: 1px black solid;
+  height: 55px;
+}
+.red-line {
+  border-right: 1px red solid;
+  height: 100%;
+  width: 10%;
+}
+.paper {
+  width: 60%;
+  margin: 0 auto;
+
+  /*background-image: url('img/fridge.png');
+  height: 900px;*/
+}
+.add-item input {
+  margin: 0 auto;
+}
+body {
+  background-color: #F1F0F0;
+}
