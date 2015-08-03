@@ -27,8 +27,16 @@ div .logo {
 .line-item, .add-box {
   height: 55px;
 }
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
 
-.lined-box {
+}
+
+.line-item {
   border: 1px #9A9696 solid;
   border-top: none;
   height: 55px;

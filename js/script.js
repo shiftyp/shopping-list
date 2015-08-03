@@ -30,13 +30,13 @@ $(document).ready(function(){
           increaseArea: '50%', // optional
           inheritID: true
         });
-        $('.line-item').sortable();
+        $('body div.line-item').sortable();
     });
 
   //remove lines
-  $('body').on('click', '.line-item .lined-box .button-error', function( event ) {
+  $('body').on('click', 'ul li.line-item .lined-box .button-error', function( event ) {
     console.log( event.target );
-    $( event.target ).closest('.line-item').slideUp();
+    $( event.target ).closest('li.line-item').slideUp();
 
 
     });
@@ -49,6 +49,6 @@ $(document).ready(function(){
       inheritID: true
     });
 
-$('.line-item').sortable();
+$('body div.line-item').sortable();
 
 });
