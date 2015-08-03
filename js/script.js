@@ -12,26 +12,41 @@ $(document).ready(function(){
 
 
   $('body').on('ifToggled', function(event){
-    alert(event.type + ' callback');
+    console.log(event.type + ' callback');
   });
 
     //add items
-
-    $('body').on('click', '.lined-box-first > div > button', function() {
-        console.log("add button clicked!");
-        var itemvalue = $('.lined-box-first .todo-item > input').val();
-        console.log(itemvalue);
-        $( 'body .line-item:last-of-type' ).clone().insertAfter('body .line-item:last-of-type');
-        $( 'body .line-item:last-of-type .todo-item > span' ).text( itemvalue );
-        $('body .line-item:last-of-type input').remove();
-        $('body .line-item:last-of-type input').iCheck({
-          checkboxClass: 'icheckbox_square-red',
-          radioClass: 'iradio_square-red',
-          increaseArea: '50%', // optional
-          inheritID: true
-        });
-        $('body div.line-item').sortable();
+    $('body').on('click', '.button-success', function() {
+      var itemvalue = $('.lined-box-first .todo-item > input').val();
+      console.log( event.target );
+      $('body ul li:last-of-type').clone().appendTo('body ul');
+      $('body ul li:last-of-type .todo-item span').text( itemvalue );
+      $('body .li:last-of-type input').remove();
+      $('body .li:last-of-type input').iCheck({
+        checkboxClass: 'icheckbox_square-red',
+        radioClass: 'iradio_square-red',
+        increaseArea: '50%', // optional
+        inheritID: true
+      });
+      $('body ul').sortable();
     });
+
+
+    // $('body').on('click', '.lined-box-first > div > button', function() {
+    //     console.log("add button clicked!");
+    //     var itemvalue = $('.lined-box-first .todo-item > input').val();
+    //     console.log(itemvalue);
+    //     $( 'body .line-item:last-of-type' ).clone().insertAfter('body .line-item:last-of-type');
+    //     $( 'body .line-item:last-of-type .todo-item > span' ).text( itemvalue );
+    //     $('body .line-item:last-of-type input').remove();
+    //     $('body .line-item:last-of-type input').iCheck({
+    //       checkboxClass: 'icheckbox_square-red',
+    //       radioClass: 'iradio_square-red',
+    //       increaseArea: '50%', // optional
+    //       inheritID: true
+    //     });
+    //     $('body div.line-item').sortable();
+    // });
 
   //remove lines
   $('body').on('click', 'ul li.line-item .lined-box .button-error', function( event ) {
