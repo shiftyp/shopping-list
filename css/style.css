@@ -31,14 +31,14 @@ div .logo {
   height: 55px;
   background-color: #F9F0C6;
 }
-.lined-box:first-of-type {
+.lined-box-first {
   border: 1px #9A9696 solid;
   height: 55px;
-  background-color: #F9F0C6;
+  background-color: #8E5B02;
+  padding: 8px 0;
 }
-/*hard coding this temporarily just to show how check items will look*/
-.lined-box:last-of-type .todo-item {
-  text-decoration: line-through;
+.lined-box-first .todo-item, .lined-box-first > button {
+  font-size: 21px;
 }
 .red-line {
   height: 100%;
@@ -53,26 +53,10 @@ div .logo {
   margin: 185px auto;*/
 
 }
-.paper .lined-box .red-line input#option-one {
-  margin: 22px;
-}
-.add-item input {
-  width: 20em;
-  height: 2.5em;
-}
-.add-box {
-  width: 50%;
-  margin: auto;
-}
-.add-item {
-  width: 100%;
-  margin: 30px auto;
-  display: inline-block;
-}
 .todo-item {
   display: inline-block;
   /*margin: 13px 0 13px 25px;*/
-  margin-left: 25px;
+  margin-left: 29px;
   vertical-align: middle;
   font-size: 24px;
 }
@@ -80,7 +64,7 @@ div .logo {
     background: rgb(28, 184, 65); /* this is a green */
     display: inline-block;
     margin: auto auto auto 10px;
-    width: 5em;
+    width: 8em;
 }
 .button-error {
   background: rgb(202, 60, 60); /* this is a maroon */
