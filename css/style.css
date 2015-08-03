@@ -8,9 +8,11 @@
   height: 55px;
 }
 .red-line {
-  border-right: 1px red solid;
   height: 100%;
   width: 10%;
+  border-right-style: double;
+  border-width: 4px;
+  border-color: red;
 }
 .paper {
   width: 60%;
@@ -18,6 +20,9 @@
 
   /*background-image: url('img/fridge.png');
   height: 900px;*/
+}
+.paper .lined-box .red-line input#option-one {
+  margin: 22px;
 }
 .add-item input {
   margin: 0 auto;
