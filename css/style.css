@@ -12,7 +12,8 @@ div .logo {
   top: 5px;
 }
 .top-header {
-  width: 100%;
+  /*width: 100%;*/
+  margin: 50px 20px;
 }
 .paper img, .paper h1, .paper h3 {
   display: inline;
@@ -45,10 +46,11 @@ div .logo {
   border-right-style: double;
   border-width: 4px;
   border-color: red;
+  display: inline-block;
 }
 .paper {
-  width: 55%;
-  margin: 185px auto;
+  /*width: 55%;
+  margin: 185px auto;*/
 
 }
 .paper .lined-box .red-line input#option-one {
@@ -69,7 +71,9 @@ div .logo {
 }
 .todo-item {
   display: inline-block;
-  margin: 13px 0 13px 25px;
+  /*margin: 13px 0 13px 25px;*/
+  margin-left: 25px;
+  vertical-align: middle;
   font-size: 24px;
 }
 .button-success {
@@ -105,3 +109,6 @@ body {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+/*add media queries for mobile screen size.
+ make font size, checkbox, button sizes smaller*/
