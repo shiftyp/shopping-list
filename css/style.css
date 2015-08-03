@@ -1,11 +1,17 @@
 .lined-box {
-  border: 1px black solid;
+  border: 1px #9A9696 solid;
   border-top: none;
   height: 55px;
+  background-color: #F9F0C6;
 }
 .lined-box:first-of-type {
-  border: 1px black solid;
+  border: 1px #9A9696 solid;
   height: 55px;
+  background-color: #F9F0C6;
+}
+/*hard coding this temporarily just to show how check items will look*/
+.lined-box:last-of-type .todo-item {
+  text-decoration: line-through;
 }
 .red-line {
   height: 100%;
@@ -16,7 +22,7 @@
 }
 .paper {
   width: 60%;
-  margin: 0 auto;
+  margin: 30px auto;
 
   /*background-image: url('img/fridge.png');
   height: 900px;*/
@@ -25,21 +31,42 @@
   margin: 22px;
 }
 .add-item input {
-  margin: 0 auto;
+  width: 24em;
+  height: 2.5em;
+}
+.add-box {
+  width: 50%;
+  margin: auto;
+}
+.add-item {
+  width: 100%;
+  margin: 5px auto;
+  display: inline-block;
 }
 .todo-item {
   display: inline-block;
   margin: 13px 0 13px 25px;
   font-size: 24px;
 }
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+    display: inline-block;
+    margin: auto auto auto 20px;
+}
 .button-error {
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   background: rgb(202, 60, 60); /* this is a maroon */
   float: right;
   margin: 10px 20px 10px 10px;
  }
+ .button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
 body {
   background-color: #F1F0F0;
 }
