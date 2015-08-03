@@ -11,23 +11,28 @@ $(document).ready(function(){
       $('.icheckbox_square-red.checked').parent().next().css("text-decoration", "line-through");
   });
 
-  //remove lines
 
-  $('.lined-box button').click(function() {
-    $( this ).parent().slideUp();
+    //add items
+
+    $('.lined-box-first > div > button').click(function() {
+        console.log("add button clicked!");
+        var itemvalue = $('.lined-box-first .todo-item > input').val();
+        console.log(itemvalue);
+        $( 'body .line-item:last-of-type' ).clone().insertAfter('body .line-item:last-of-type');
+        $( 'body .line-item:last-of-type .todo-item > span' ).text( itemvalue );
+    });
+
+  //remove lines
+  $('body').on('click', '.line-item .lined-box .button-error', function( event ) {
+    console.log( event.target );
+    $( event.target ).closest('.line-item').slideUp();
+
 
     });
 
-  //add items
-
-  $('.lined-box-first > div > button').click(function() {
-      console.log("add button clicked!");
-      var itemvalue = $('.lined-box-first .todo-item > input').val();
-      console.log(itemvalue);
-      $( 'body .line-item:last-of-type' ).clone().insertAfter('body .line-item:last-of-type');
-      $( 'body .line-item:last-of-type .todo-item > span' ).text( itemvalue );   
-  });
-
+$('.line-item').click(function() {
+  console.log( event.target );
+});
 
 
 });
