@@ -21,17 +21,15 @@
   border-color: red;
 }
 .paper {
-  width: 60%;
-  margin: 30px auto;
+  width: 55%;
+  margin: 185px auto;
 
-  /*background-image: url('img/fridge.png');
-  height: 900px;*/
 }
 .paper .lined-box .red-line input#option-one {
   margin: 22px;
 }
 .add-item input {
-  width: 24em;
+  width: 20em;
   height: 2.5em;
 }
 .add-box {
@@ -40,7 +38,7 @@
 }
 .add-item {
   width: 100%;
-  margin: 5px auto;
+  margin: 30px auto;
   display: inline-block;
 }
 .todo-item {
@@ -51,7 +49,8 @@
 .button-success {
     background: rgb(28, 184, 65); /* this is a green */
     display: inline-block;
-    margin: auto auto auto 20px;
+    margin: auto auto auto 10px;
+    width: 5em;
 }
 .button-error {
   background: rgb(202, 60, 60); /* this is a maroon */
@@ -67,6 +66,29 @@
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-body {
-  background-color: #F1F0F0;
+body, html {
+  margin: 0;
+
+}
+.fridge {
+  display: block;
+  background-image: url('../img/fridge3-cropped.png');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.fridge .paper {
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
 }
