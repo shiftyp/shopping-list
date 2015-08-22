@@ -3,16 +3,19 @@
   <head>
     <meta charset="utf-8">
 	  <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	  <!-- <script src="js/jquery-2.1.4.js"></script> -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- <script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script> -->
     <script src="js/script.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive product landing page.">
-
-  <script src="js/icheck.js"></script>
-
-    <link href="css/square/red.css" rel="stylesheet">
+  <!-- <script src="js/icheck.js"></script> -->
+    <!-- <link href="css/square/red.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
     <link rel="stylesheet" href="css/style.css">
 
     <!--[if lte IE 8]>
@@ -26,14 +29,13 @@
 
     <!--<![endif]-->
 
-
-
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
 
     <title>Shopping List Web app</title>
   </head>
 <body>
+
 
     <div class="paper pure-g">
         <div class="pure-u-lg-1"></div>
@@ -44,8 +46,11 @@
           </div>
         <div class="pure-u-lg-1-5"></div>
 
-
+  <!-- <div class="pure-u-lg-1-5"></div> -->
+  <div class="pure-u-lg-3-5 validation">Please enter text to add to your list.</div>
+  <div class="pure-u-lg-1-5"></div>
   <div class="pure-u-1"></div>
+
   <div class="pure-u-lg-1-5"></div>
 
   <div class="add-box pure-u-lg-3-5">
@@ -66,21 +71,19 @@
 
   <div class="pure-u-lg-1-5"></div>
   <ul class="pure-u-3-5">
-      <li class="line-item">
+      <li class="line-item template">
           <div class="lined-box">
-            <div class="red-line"><input type="checkbox" value=""></div>
+            <div class="red-line squaredTwo">
+              <input type="checkbox" value="None" id="squaredTwo" name="check" />
+            	<label for="squaredTwo"></label>
+
+            </div>
             <div class="todo-item"><span>Chocolate milk</span></div>
             <button class="button-error pure-button">X</button>
           </div>
       </li>
 
-      <li class="line-item">
-          <div class="lined-box">
-            <div class="red-line"><input type="checkbox" value=""></div>
-            <div class="todo-item"><span>Chocolate milk</span></div>
-            <button class="button-error pure-button">X</button>
-          </div>
-      </li>
+
   </ul>
   <div class="pure-u-lg-1-5"></div>
 
