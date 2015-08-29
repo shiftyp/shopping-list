@@ -1,12 +1,57 @@
 $(document).ready(function(){
-	 //input validation
+
+	function ShoppingListApp() {
+		this.list = new List();
+		this.inputView = new InputView();
+		this.listView = new ListView();
+
+		for (var i = 0; i < this.list.listItems.length; i++) {
+			this.listView.addListItem(this.list.listItems[i]);
+		}
+	}
+
+	ShoppingListApp.prototype.addListItem = function(value) {
+		this.listView.addListItem(value);
+		this.list.addListItem(value);
+	};
 	
+	ShoppingListApp.prototype.removeListItem = function(index) {
+		this.list.removeListItem(index);
+	};
+
+	function List() {
+		this.listItems = [];
+		this.load();
+	}
+
+	List.prototype.addListItem = function(value) {
+		this.listItems.push(value);
+		this.save();
+	};
+
+	List.prototype.removeListItem = function(index) {
+		this.listItems.splice(index, 1);
+		this.save();
+	};
+
+	List.prototype.save = function() {
+		localStorage.setItem('shoppingList', JSON.stringify(this.listItems));
+	}
+
+	List.prototype.load = function() {
+		var listItems = localStorage.getItem('shoppingList');
+		if (listItems) {
+			this.listItems = JSON.parse(listItems);
+			console.log(this.listItems);
+		}
+	};
+
 	function InputView() {
 		this.element = $('.add-box');
 		this.button = this.element.find('button');
 		this.input = this.element.find('input');
 		this.validationMessage = this.element.find('.validation');
-		
+
 		this.button.click(this.validateInput.bind(this));
 	}
 
@@ -20,10 +65,9 @@ $(document).ready(function(){
 			this.validationMessage.css('display', 'none');
 		}
 
-		listView.addListItem(inputVal);
+		app.addListItem(inputVal);
 	}
 
-	var inputView = new InputView();
 
 	//----------------------------------
 	
@@ -52,9 +96,11 @@ $(document).ready(function(){
 	
 	ListView.prototype.removeListItem = function(event) {
 		$( event.target ).closest('li.line-item').slideUp(function () {
+			var itemIndex = $( this ).index() - 1;
+			app.removeListItem(itemIndex);
 			$( this ).remove();
 		});
 	};
-
-	var listView = new ListView();
+	
+	var app = new ShoppingListApp();
 });
